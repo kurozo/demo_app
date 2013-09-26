@@ -1,0 +1,25 @@
+<%= form_for(@tango) do |f| %>
+  <% if @tango.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tango.errors.count, "error") %> prohibited this tango from being saved:</h2>
+
+      <ul>
+      <% @tango.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :eword %><br />
+    <%= f.text_field :eword %>
+  </div>
+  <div class="field">
+    <%= f.label :jword %><br />
+    <%= f.text_field :jword %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
